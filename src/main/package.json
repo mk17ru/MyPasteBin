@@ -1,0 +1,10 @@
+{
+  "name": "main",
+  "version": "1.0.0",
+  "dependencies": {
+    "prismjs": "^1.22.0"
+  },
+  "devDependencies": {
+    "rainbow-code": "^2.1.7"
+  }
+}

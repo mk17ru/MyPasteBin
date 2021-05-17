@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:fragment="header">
+    <div th:insert="fragments/head.html"> </div>
+    <header>
+        <div class="name">
+            <h1>PasteBin</h1>
+        </div>
+        <a href="/"><img th:src="@{../logo.png}" alt="PasteBinDemo" title="PasteBinDemo" style="height: 3rem; weight: 3rem; display: inline-block"/></a>
+<!--        <div class="languages">-->
+<!--            <a href="#"><img th:src="@{img/gb.png}" alt="In English" title="In English"/></a>-->
+<!--            <a href="#"><img th:src="@{img/ru.png}" alt="In Russian" title="In Russian"/></a>-->
+<!--        </div>-->
+        <div class="enter-or-register-box">
+            <a href="/enter">Enter</a>
+            <a th:if="${session.userId}" href="/logout">Logout</a>
+            <a th:unless="${session.userId}" href="/register">Register</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+<!--                <li><a href="/users/all">Users</a></li>-->
+<!--                <li><a href="/writePost">Write Post</a></li>-->
+                <li><a href="/posts">Posts</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+</html>

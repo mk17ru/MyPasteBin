@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:insert="fragments/head.html"> </div>
+<body>
+<div th:insert="fragments/header.html"> </div>
+<div class="middle">
+    <main>
+        <form th:method="POST" th:action="@{/writePost}" th:object="${postForm}">
+            <label style="padding-bottom: 2rem">  Enter your code here...</label>
+            <textarea th:field="*{text}" name="styled-textarea" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')">
+            </textarea>
+            <div th:insert="fragments/textinput.html"> </div>
+        </form>
+    </main>
+</div>
+<div th:insert="fragments/footer.html"> </div>
+</body>
+<script>
+</script>
+</html>
+
+

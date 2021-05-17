@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:insert="fragments/head.html"> </div>
+<body onload="funonload();">
+<div th:insert="fragments/header.html"> </div>
+<div class="middle">
+    <main>
+        <h4 color="blue">Your code:</h4>
+        <pre id="postText"><code></code></pre>
+        <form th:method="POST" th:action="@{/writePost}" th:object="${postForm}" style="padding-top: 7rem">
+            <label style="padding-bottom: 2rem">  Change your code here...</label>
+            <textarea th:field="*{text}" name="styled-textarea" id="styled" onfocus="setbg('#e5fff3');" onblur="setbg('white')">
+            </textarea>
+            <div th:insert="fragments/textinput.html"> </div>
+        </form>
+    </main>
+</div>
+<div th:insert="fragments/footer.html"> </div>
+</body>
+<script type="text/javascript" th:inline="javascript">
+/*<![CDATA[*/
+function funonload() {
+    let s = /*[[${postForm.text}]]*/ ""
+    document.getElementById('postText').innerHTML = s;
+    hljs.highlightBlock(document.getElementById('postText'))
+}
+</script>
+</html>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/idea.min.css">
