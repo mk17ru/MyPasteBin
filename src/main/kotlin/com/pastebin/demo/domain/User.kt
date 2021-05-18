@@ -27,4 +27,5 @@ class User(@Id
 
            @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL])
            @OrderBy("creationTime desc")
-           var posts : List<Post>)
+           var posts : List<Post>
+)
