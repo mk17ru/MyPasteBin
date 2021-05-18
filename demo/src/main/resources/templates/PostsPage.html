@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:insert="fragments/head.html"> </div>
+<body>
+<div th:insert="fragments/header.html"> </div>
+<div class="middle">
+    <main>
+        <p>Your codes:</p>
+        <span th:each="posts: ${postMap}">
+            <td><span>For Text №</span><span th:text="${postMap.get(posts.key).get(0).getId()}"> </span><span>:</span></td>
+            <p>Versions:</p>
+            <tr th:each="p: ${posts.value}">
+                <td><span>Version: </span> <a th:href="@{'/post/' + ${p.getHash()}}" th:text="${p.getHash()}"> </a></td>
+                <form action="#"  class="form" th:action="@{'/post/visible/'+${p.getHash()}}" th:method="Patch">
+                     <input type="hidden" value="Patch"/>
+                    <input th:if="${p.isPublic()}" type="submit" value="UnPublic" th:method="Patch">
+                    <input th:if="${!p.isPublic()}" type="submit" value="Public" th:method="Patch">
+                </form>
+                <br>
+            </tr>
+            <br>
+        </span>
+    </main>
+</div>
+<div th:insert="fragments/footer.html"> </div>
+<script>
+
+</script>
+</body>
+</html>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/idea.min.css">
