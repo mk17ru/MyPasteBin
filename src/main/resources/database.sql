@@ -1,1 +1,0 @@
-create TABLE person()
