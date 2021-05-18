@@ -1,1 +1,1 @@
-https://mypastebinapp.herokuapp.com/post/rU7NxzfaWz1BM65k - Heroku
+https://mypastebinapp.herokuapp.com/ - Heroku
