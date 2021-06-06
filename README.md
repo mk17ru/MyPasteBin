@@ -7,3 +7,5 @@ Pls for the first start wait ~ 30 seconds, because of Heroku free version.
 
 ### Code View
 ![image](https://user-images.githubusercontent.com/57333967/120924767-b1a79c80-c6ee-11eb-8394-e1fdb19bd573.png)
+
+### Register and you will have new functions: Save and change your code, send it for your colleagues. Change code mode public or unpublic(only for you).
